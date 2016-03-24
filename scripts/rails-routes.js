@@ -2,25 +2,6 @@ angular.module("rViews", ["rResources"]);
 
 angular.module("rViews").controller("rQuizController", ["$scope", function($scope) {}]);
 
-angular.module("rViews").controller("rPreziController", ["$scope", "$element", "$sce", "$rootScope", "$timeout", function($scope, $element, $sce, $rootScope, $timeout) {
-  var containerHeight, containerWidth, ratio, setIframeOptions;
-  ratio = 16 / 9;
-  $scope.prezi = {};
-  containerWidth = $element.width() - 20;
-  containerHeight = $element.height() - 20;
-  setIframeOptions = function() {
-    if (containerWidth > containerHeight) {
-      $scope.prezi.height = containerHeight;
-      $scope.prezi.width = Math.round(containerHeight * ratio);
-    } else {
-      $scope.prezi.width = containerWidth;
-      $scope.prezi.height = Math.round(containerWidth / ratio);
-    }
-    return $scope.prezi.src = $sce.trustAsResourceUrl("https://prezi.com/embed/-jse08aow99f/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;landing_data=bHVZZmNaNDBIWnNjdEVENDRhZDFNZGNIUE43MHdLNWpsdFJLb2ZHanI0MjgwbDI2NlBVMGsxeEVTSHpkN0tSV213PT0&amp;landing_sign=aYqDDzE8Kg5-R-W_2En8x3SwQbpx5LjDg2C3xHlHEQ8");
-  };
-  return setIframeOptions();
-}]);
-
 angular.module("rViews").controller("rLectionsController", ["$scope", "$stateParams", "$rootScope", "$sce", function($scope, $stateParams, $rootScope, $sce) {
   var getContentFile, offStateChengeSucess;
   $scope.menu = [
@@ -54,6 +35,25 @@ angular.module("rViews").controller("rLectionsController", ["$scope", "$statePar
   });
   $scope.$on("$destroy", offStateChengeSucess);
   return $scope.contentFile = getContentFile($stateParams);
+}]);
+
+angular.module("rViews").controller("rPreziController", ["$scope", "$element", "$sce", "$rootScope", "$timeout", function($scope, $element, $sce, $rootScope, $timeout) {
+  var containerHeight, containerWidth, ratio, setIframeOptions;
+  ratio = 16 / 9;
+  $scope.prezi = {};
+  containerWidth = $element.width() - 20;
+  containerHeight = $element.height() - 20;
+  setIframeOptions = function() {
+    if (containerWidth > containerHeight) {
+      $scope.prezi.height = containerHeight;
+      $scope.prezi.width = Math.round(containerHeight * ratio);
+    } else {
+      $scope.prezi.width = containerWidth;
+      $scope.prezi.height = Math.round(containerWidth / ratio);
+    }
+    return $scope.prezi.src = $sce.trustAsResourceUrl("https://prezi.com/embed/-jse08aow99f/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;landing_data=bHVZZmNaNDBIWnNjdEVENDRhZDFNZGNIUE43MHdLNWpsdFJLb2ZHanI0MjgwbDI2NlBVMGsxeEVTSHpkN0tSV213PT0&amp;landing_sign=aYqDDzE8Kg5-R-W_2En8x3SwQbpx5LjDg2C3xHlHEQ8");
+  };
+  return setIframeOptions();
 }]);
 
 angular.module("rViews").controller("rAboutController", function() {});
