@@ -1,13 +1,18 @@
 body
 md-content
 	background rgba(238,238,238,0.6)
+
+body
+	height 100%
+	overflow hidden
 	
 .main-view
 	height 100%
 	
 	md-toolbar
 		max-height 64px
-	
+	& > ui-view
+		height calc(100% - 64px)
 	&__inner.center
 		padding 10px
 		align-items center
@@ -42,5 +47,9 @@ md-content
 			text-overflow ellipsis
 	&__content
 		align-items center
+
+#quiz_container
+	width 70%
+	margin 0 auto
 	
 		

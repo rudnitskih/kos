@@ -5,22 +5,26 @@ html(ng-app="rApp")
 		meta(content="width=device-width, minimum-scale=1, maximum-scale=1" name="viewport")
 		meta(name="format-detection", content="telephone=no")
 		meta(name="author", content="Rudnytskykh Dmytro, website: rudnitskih.pp.ua")
-		base(href="/kos/")
-			
+		script.
+			document.write('<base href="' + window.location.pathname + '">');
+		//- base(href="/kos/")
+		link(href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet")
 		link(href='./styles/angular-material.css' rel="stylesheet")
 		link(href='./styles/rails-routes.css' rel="stylesheet")
+		link(href='//motherjones.github.io/newsquiz/css/style.css' rel="stylesheet")
 
 		//- inject:css
 		//- endinject
 	body(ng-controller="rAppController")
-		ui-view.main-view(layout="column")
+		ui-view.main-view(layout="column" layout-fill)
 		//- .r-preloader.active(ng-hide="loaded")
 			include ./modules/components/preloader/preloader
 		//- inject:js
 		//- endinject
-
 		script(src='./scripts/lodash.js')
 		script(src='./scripts/jquery.js')
+		script(src='./scripts/tabletop.js')
+		script(src='//motherjones.github.io/newsquiz/js/newsquiz.min.js')
 		script(src='./scripts/angular.js')
 		script(src='./scripts/angular-animate.js')
 		script(src='./scripts/angular-aria.js')

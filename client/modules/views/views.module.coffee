@@ -1,3 +1,1 @@
-angular.module "rViews", [
-	"rResources"
-]
+angular.module "rViews", []

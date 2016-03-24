@@ -11,7 +11,16 @@ paths = require('../../config').paths
 pjson = require('../../package.json')
 
 compileScripts = ->
-	gulp.src(paths.src.scripts).pipe(plumber()).pipe(coffee(bare: true)).on('error', console.log).pipe(angularFilesort()).pipe(ngAnnotate()).pipe(concat(pjson.name + '.js')).pipe(gulp.dest(paths.dest.scripts)).pipe livereload()
+	gulp
+		.src(paths.src.scripts)
+		.pipe(plumber())
+		.pipe(coffee(bare: true))
+		.on('error', console.log)
+		.pipe(angularFilesort())
+		.pipe(ngAnnotate())
+		.pipe(concat(pjson.name + '.js'))
+		.pipe(gulp.dest(paths.dest.scripts))
+		.pipe livereload()
 	return
 
 gulp.task 'scripts', ->

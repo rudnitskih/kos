@@ -3,4 +3,4 @@ md-toolbar(layout="row" flex)
 		a(ui-sref="{{item.state}}" ng-repeat="item in navBarItems")
 			md-button(class="md-raised" ng-class="{active: isActiveLink}") {{item.label}}
 
-ui-view(layout="column" flex)
+ui-view(layout="row" flex)
