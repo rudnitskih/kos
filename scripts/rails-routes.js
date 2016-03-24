@@ -75,8 +75,6 @@ angular.module("rResources").factory("rRouteResource", ["$resource", function($r
   return $resource("api/routes/:id", {});
 }]);
 
-angular.module("rComponents", []);
-
 angular.module("rApp", ["angular-loading-bar", "ngMaterial", "ui.router", "rViews", "rComponents"]);
 
 angular.module("rApp").run(["$rootScope", "$http", "$animate", function($rootScope, $http, $animate) {
@@ -115,8 +113,7 @@ angular.module("rApp").config(["$stateProvider", "$locationProvider", "$urlRoute
     controller: "rQuizController as $ctrl"
   });
   return $locationProvider.html5Mode({
-    enabled: true,
-    requireBase: false
+    enabled: true
   });
 }]);
 
@@ -139,3 +136,5 @@ angular.module("rApp").controller("rAppController", ["$scope", function($scope) 
 }]);
 
 angular.module("rApp").config(["$mdThemingProvider", function($mdThemingProvider) {}]);
+
+angular.module("rComponents", []);
