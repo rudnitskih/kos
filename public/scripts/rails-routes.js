@@ -116,7 +116,8 @@ angular.module("rApp").config(["$stateProvider", "$locationProvider", "$urlRoute
   });
   $urlRouterProvider.otherwise("/");
   return $locationProvider.html5Mode({
-    enabled: true
+    enabled: true,
+    requireBase: false
   });
 }]);
 
