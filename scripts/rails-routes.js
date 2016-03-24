@@ -1,5 +1,7 @@
 angular.module("rViews", ["rResources"]);
 
+angular.module("rViews").controller("rQuizController", ["$scope", function($scope) {}]);
+
 angular.module("rViews").controller("rPreziController", ["$scope", "$element", "$sce", "$rootScope", "$timeout", function($scope, $element, $sce, $rootScope, $timeout) {
   var containerHeight, containerWidth, ratio, setIframeOptions;
   ratio = 16 / 9;
@@ -18,8 +20,6 @@ angular.module("rViews").controller("rPreziController", ["$scope", "$element", "
   };
   return setIframeOptions();
 }]);
-
-angular.module("rViews").controller("rQuizController", ["$scope", function($scope) {}]);
 
 angular.module("rViews").controller("rLectionsController", ["$scope", "$stateParams", "$rootScope", "$sce", function($scope, $stateParams, $rootScope, $sce) {
   var getContentFile, offStateChengeSucess;
