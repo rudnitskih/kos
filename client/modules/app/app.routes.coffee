@@ -32,4 +32,3 @@ angular.module("rApp").config ($stateProvider, $locationProvider, $urlRouterProv
 
 	$locationProvider.html5Mode
 		enabled: true
-		requireBase: false
