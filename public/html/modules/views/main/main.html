@@ -1,0 +1,6 @@
+
+<md-toolbar layout="row" flex="flex">
+  <div class="md-toolbar-tools"><a ui-sref="{{item.state}}" ng-repeat="item in navBarItems">
+      <md-button ng-class="{active: isActiveLink}" class="md-raised">{{item.label}}</md-button></a></div>
+</md-toolbar>
+<ui-view layout="column" flex="flex"></ui-view>

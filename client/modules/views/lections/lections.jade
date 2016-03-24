@@ -1,0 +1,12 @@
+div(layout="row" flex)
+	md-sidenav.lections__sidenav(md-component-id="left" class="md-sidenav-left" md-is-locked-open="$mdMedia('gt-sm')")
+		md-content
+			md-list
+				md-list-item(ng-repeat="item in menu")
+					a.lections__link.md-button(ui-sref="r.lections({id: $index + 1})" ng-class="{active: isActiveLink($index)}")
+						md-item-content(md-ink-ripple)
+							.inset.lections__link-label
+								| {{item.title}}
+	div.lections__content(layout="column" flex)
+		md-content.lections__iframe-container
+			iframe(ng-src="{{contentFile}}" width="800" height="700px")

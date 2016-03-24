@@ -1,0 +1,46 @@
+body
+md-content
+	background rgba(238,238,238,0.6)
+	
+.main-view
+	height 100%
+	
+	md-toolbar
+		max-height 64px
+	
+	&__inner.center
+		padding 10px
+		align-items center
+		justify-content center
+	
+.about
+	&__card
+		width 50%
+.prezi
+	&__loader
+		position absolute
+		top 50%
+		left 50%
+		margin-top -50px
+		margin-left -50px
+	&__iframe-container
+		position relative
+		z-index 10
+.lections
+	&__sidenav
+		&
+		md-content
+			background-color rgb(3,169,244)
+			color #fff
+	&__link
+		display block
+		width 100%
+		&.active
+			background-color rgb(255,87,34) !important
+		&-label
+			overflow hidden
+			text-overflow ellipsis
+	&__content
+		align-items center
+	
+		
