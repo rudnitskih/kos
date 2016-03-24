@@ -25,7 +25,7 @@ angular.module("rViews").controller("rPreziController", ["$scope", "$element", "
 }]);
 
 angular.module("rViews").controller("rLectionsController", ["$scope", "$stateParams", "$rootScope", "$sce", function($scope, $stateParams, $rootScope, $sce) {
-  var getContentFile, offStateChengeSucess;
+  var getContentFile, offStateChangeSucess;
   $scope.menu = [
     {
       title: "1.Типизация компонентов обучающих программ.",
@@ -52,10 +52,10 @@ angular.module("rViews").controller("rLectionsController", ["$scope", "$statePar
     url = $scope.menu[parseInt(stateParams.id) - 1].contentUrl;
     return $sce.trustAsResourceUrl("https://docs.google.com/viewer?srcid=" + url + "&pid=explorer&efh=false&a=v&chrome=false&embedded=true");
   };
-  offStateChengeSucess = $rootScope.$on("$stateChangeSuccess", function(event, toState, toStateParams) {
+  offStateChangeSucess = $rootScope.$on("$stateChangeSuccess", function(event, toState, toStateParams) {
     return $scope.contentFile = getContentFile(toStateParams);
   });
-  $scope.$on("$destroy", offStateChengeSucess);
+  $scope.$on("$destroy", offStateChangeSucess());
   return $scope.contentFile = getContentFile($stateParams);
 }]);
 
@@ -74,7 +74,7 @@ angular.module("rApp").run(["$rootScope", "$http", "$animate", function($rootSco
 angular.module("rApp").config(["$stateProvider", "$locationProvider", "$urlRouterProvider", function($stateProvider, $locationProvider, $urlRouterProvider) {
   var viewsPath;
   viewsPath = "./html/modules/views/";
-  $stateProvider.state("r", {
+  return $stateProvider.state("r", {
     url: "",
     abstract: true,
     templateUrl: viewsPath + "main/main.html"
@@ -99,9 +99,6 @@ angular.module("rApp").config(["$stateProvider", "$locationProvider", "$urlRoute
     url: "/quiz",
     templateUrl: viewsPath + "quiz/quiz.html",
     controller: "rQuizController as $ctrl"
-  });
-  return $locationProvider.html5Mode({
-    enabled: true
   });
 }]);
 
