@@ -55,6 +55,9 @@ body {
 .lections__content {
   align-items: center;
 }
+.lections__iframe-container {
+  height: calc(100% - 64px);
+}
 #quiz_container {
   width: 70%;
   margin: 0 auto;
