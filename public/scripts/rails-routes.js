@@ -1,7 +1,5 @@
 angular.module("rViews", ["rResources"]);
 
-angular.module("rViews").controller("rQuizController", ["$scope", function($scope) {}]);
-
 angular.module("rViews").controller("rPreziController", ["$scope", "$element", "$sce", "$rootScope", "$timeout", function($scope, $element, $sce, $rootScope, $timeout) {
   var containerHeight, containerWidth, ratio, setIframeOptions;
   ratio = 16 / 9;
@@ -20,6 +18,8 @@ angular.module("rViews").controller("rPreziController", ["$scope", "$element", "
   };
   return setIframeOptions();
 }]);
+
+angular.module("rViews").controller("rQuizController", ["$scope", function($scope) {}]);
 
 angular.module("rViews").controller("rLectionsController", ["$scope", "$stateParams", "$rootScope", "$sce", function($scope, $stateParams, $rootScope, $sce) {
   var getContentFile, offStateChengeSucess;
@@ -87,7 +87,7 @@ angular.module("rApp").run(["$rootScope", "$http", "$animate", function($rootSco
 
 angular.module("rApp").config(["$stateProvider", "$locationProvider", "$urlRouterProvider", function($stateProvider, $locationProvider, $urlRouterProvider) {
   var viewsPath;
-  viewsPath = "html/modules/views/";
+  viewsPath = "./html/modules/views/";
   $stateProvider.state("r", {
     url: "",
     abstract: true,

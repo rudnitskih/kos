@@ -1,5 +1,5 @@
 angular.module("rApp").config ($stateProvider, $locationProvider, $urlRouterProvider) ->
-	viewsPath = "html/modules/views/"
+	viewsPath = "./html/modules/views/"
 
 	$stateProvider
 		.state "r",
