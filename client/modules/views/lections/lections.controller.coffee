@@ -33,10 +33,10 @@ angular
 			$sce.trustAsResourceUrl "https://docs.google.com/viewer?srcid=#{url}&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
 
 		
-		offStateChengeSucess = $rootScope.$on "$stateChangeSuccess", (event, toState, toStateParams) ->
+		offStateChangeSucess = $rootScope.$on "$stateChangeSuccess", (event, toState, toStateParams) ->
 			$scope.contentFile = getContentFile toStateParams
 
-		$scope.$on "$destroy", offStateChengeSucess
+		$scope.$on "$destroy", offStateChangeSucess()
 		
 		$scope.contentFile = getContentFile $stateParams
 

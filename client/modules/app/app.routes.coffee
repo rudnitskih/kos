@@ -30,5 +30,5 @@ angular.module("rApp").config ($stateProvider, $locationProvider, $urlRouterProv
 			templateUrl: "#{viewsPath}quiz/quiz.html"
 			controller: "rQuizController as $ctrl"
 
-	$locationProvider.html5Mode
-		enabled: true
+	# $locationProvider.html5Mode
+	# 	enabled: true
