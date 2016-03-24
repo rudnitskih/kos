@@ -5,14 +5,18 @@
     <meta content="width=device-width, minimum-scale=1, maximum-scale=1" name="viewport">
     <meta name="format-detection" content="telephone=no">
     <meta name="author" content="Rudnytskykh Dmytro, website: rudnitskih.pp.ua">
-    <base href="/kos/">
+    <script>document.write('<base href="' + window.location.pathname + '">');</script>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="./styles/angular-material.css" rel="stylesheet">
     <link href="./styles/rails-routes.css" rel="stylesheet">
+    <link href="//motherjones.github.io/newsquiz/css/style.css" rel="stylesheet">
   </head>
   <body ng-controller="rAppController">
-    <ui-view layout="column" class="main-view"></ui-view>
+    <ui-view layout="column" layout-fill class="main-view"></ui-view>
     <script src="./scripts/lodash.js"></script>
     <script src="./scripts/jquery.js"></script>
+    <script src="./scripts/tabletop.js"></script>
+    <script src="//motherjones.github.io/newsquiz/js/newsquiz.min.js"></script>
     <script src="./scripts/angular.js"></script>
     <script src="./scripts/angular-animate.js"></script>
     <script src="./scripts/angular-aria.js"></script>

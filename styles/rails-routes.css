@@ -4,11 +4,18 @@ body,
 md-content {
   background: rgba(238,238,238,0.6);
 }
+body {
+  height: 100%;
+  overflow: hidden;
+}
 .main-view {
   height: 100%;
 }
 .main-view md-toolbar {
   max-height: 64px;
+}
+.main-view > ui-view {
+  height: calc(100% - 64px);
 }
 .main-view__inner.center {
   padding: 10px;
@@ -47,6 +54,10 @@ md-content {
 }
 .lections__content {
   align-items: center;
+}
+#quiz_container {
+  width: 70%;
+  margin: 0 auto;
 }
 
 .angular-google-map-container {

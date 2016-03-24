@@ -1,6 +1,9 @@
-angular.module("rViews", ["rResources"]);
+angular.module("rViews", []);
 
-angular.module("rViews").controller("rQuizController", ["$scope", function($scope) {}]);
+angular.module("rViews").controller("rQuizController", ["$scope", function($scope) {
+  var quiz;
+  return quiz = $('#quiz_container').quiz('15Pdbcs7D1xyR_tLKhvDQE5fD_yC0qpauzKrzvFz5pRI');
+}]);
 
 angular.module("rViews").controller("rPreziController", ["$scope", "$element", "$sce", "$rootScope", "$timeout", function($scope, $element, $sce, $rootScope, $timeout) {
   var containerHeight, containerWidth, ratio, setIframeOptions;
@@ -58,22 +61,7 @@ angular.module("rViews").controller("rLectionsController", ["$scope", "$statePar
 
 angular.module("rViews").controller("rAboutController", function() {});
 
-angular.module("rResources", ["ngResource"]);
-
-angular.module("rResources").factory("rStationResource", ["$resource", "$cacheFactory", function($resource, $cacheFactory) {
-  var stationCache;
-  stationCache = $cacheFactory('Station');
-  return $resource("api/stations/:id", {}, {
-    get: {
-      cache: stationCache,
-      method: 'get'
-    }
-  });
-}]);
-
-angular.module("rResources").factory("rRouteResource", ["$resource", function($resource) {
-  return $resource("api/routes/:id", {});
-}]);
+angular.module("rComponents", []);
 
 angular.module("rApp", ["angular-loading-bar", "ngMaterial", "ui.router", "rViews", "rComponents"]);
 
@@ -136,5 +124,3 @@ angular.module("rApp").controller("rAppController", ["$scope", function($scope) 
 }]);
 
 angular.module("rApp").config(["$mdThemingProvider", function($mdThemingProvider) {}]);
-
-angular.module("rComponents", []);
