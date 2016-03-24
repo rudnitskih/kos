@@ -1,0 +1,55 @@
+
+
+body,
+md-content {
+  background: rgba(238,238,238,0.6);
+}
+.main-view {
+  height: 100%;
+}
+.main-view md-toolbar {
+  max-height: 64px;
+}
+.main-view__inner.center {
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.about__card {
+  width: 50%;
+}
+.prezi__loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+}
+.prezi__iframe-container {
+  position: relative;
+  z-index: 10;
+}
+.lections__sidenav,
+.lections__sidenav md-content {
+  background-color: #03a9f4;
+  color: #fff;
+}
+.lections__link {
+  display: block;
+  width: 100%;
+}
+.lections__link.active {
+  background-color: #ff5722 !important;
+}
+.lections__link-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.lections__content {
+  align-items: center;
+}
+
+.angular-google-map-container {
+  height: 400px;
+}
+
